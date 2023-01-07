@@ -1,23 +1,45 @@
-const profileDataArgs = process.argv.slice(2, process.argv.length);
+const fs = require('fs')
 
-console.log(profileDataArgs);
+const profileDataArgs = process.argv.slice(2)
 
-const printProfileData = (profileDataArr) => {
+const [name, github] = profileDataArgs
 
-    profileDataArr.forEach((profileItem) => console.log(profileItem));    
-};
+const generatePage = require('./src/page-template.js')
 
-printProfileData(profileDataArgs);
+fs.writeFile('index.html', generatePage(name,github), err => {
 
-const message = 'hello node'
+    if (err) throw new Error(err)
 
-if (true === true) {
-    const message = 'hello es6'
-    let sum = 5
-    sum +=10
-    console.log(message)
-    console.log(sum)
-}
+    console.log('portfolio complete... check out index.html to see the output')
+})
 
-console.log(message)
-console.log(sum)
+
+
+
+
+//reference module work:
+//const printProfileData = profileDataArr => {
+    // this...
+   // for (let i = 0; i < profileDataArr.length; i += 1) {
+   //   console.log(profileDataArr[i]);
+   // }
+  
+   // console.log('================');
+    // is the same as this
+   //profileDataArr.forEach((profileItem) => console.log(profileItem));    
+//};
+
+//printProfileData(profileDataArgs);
+
+//const message = 'hello node'
+
+//if (true === true) {
+  //  const message = 'hello es6'
+  //  let sum = 5
+  //  sum +=10
+  //  console.log(message)
+  //  console.log(sum)
+//}
+
+//console.log(message)
+//console.log(sum)

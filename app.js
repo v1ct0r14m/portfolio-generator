@@ -1,23 +1,35 @@
-const fs = require('fs')
+//const { default: inquirer } = require('inquirer')
+const inquirer = require('inquirer')
 
-const profileDataArgs = process.argv.slice(2)
+inquirer
+    .prompt([
+        {
+            type:'input',
+            name:'name',
+            message:'what is your name?'
+        }
+    ])
+    .then(answers => console.log(answers))
 
-const [name, github] = profileDataArgs
+// const fs = require('fs')
+// const generatePage = require('./src/page-template.js')
 
-const generatePage = require('./src/page-template.js')
+// const pageHTML = generatePage(name,github)
 
-fs.writeFile('index.html', generatePage(name,github), err => {
 
-    if (err) throw new Error(err)
+// fs.writeFile('index.html', pageHTML, err => {
 
-    console.log('portfolio complete... check out index.html to see the output')
-})
+//     if (err) throw Error(err)
+
+//     console.log('portfolio complete... check out index.html to see the output')
+// })
 
 
 
 
 
 //reference module work:
+//const profileDataArgs = process.argv.slice(2)
 //const printProfileData = profileDataArr => {
     // this...
    // for (let i = 0; i < profileDataArr.length; i += 1) {

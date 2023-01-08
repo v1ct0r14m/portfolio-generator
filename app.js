@@ -131,11 +131,11 @@ promptUser()
   .then(portfolioData => {
     const pageHTML = generatePage(portfolioData);
 
-    fs.writeFile('./index.html', pageHTML, err => {
+    fs.writeFile('./dist/index.html', pageHTML, err => {
       if (err) throw new Error(err);
 
       console.log('Page created! Check out index.html in this directory to see it!');
-    });
+    fs.copyFile('./src/style.css)});
   });
 
 

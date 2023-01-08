@@ -1,5 +1,23 @@
 {
   "dependencies": {
-    "bootstrap": "^3.4.1"
-  }
+    "bootstrap": "^3.4.1",
+    "inquirer": "^8.2.5"
+  },
+  "name": "portfolio-generator",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/v1ct0r14m/portfolio-generator.git"
+  },
+  "author": "victoria mota",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/v1ct0r14m/portfolio-generator/issues"
+  },
+  "homepage": "https://github.com/v1ct0r14m/portfolio-generator#readme",
+  "description": "generator to ease portfolio creation and management"
 }
